@@ -25,7 +25,7 @@ module.exports = {
         var smtpConfig = {
           host: 'smtp.gmail.com',
           port: 465,
-          secure: true, // use SSL
+          //secure: true, // use SSL
           auth: {
               user: process.env.MAIL_NAME,
               pass: process.env.MAIL_PASSWORD
@@ -64,7 +64,7 @@ module.exports = {
         let message = {
           from: process.env.MAIL_NAME,
           to: input.to,
-          subject:"Acil Sevgi",
+          subject:input.subject,
           html: mail
         }
         transporter.sendMail(message).then(() => {
